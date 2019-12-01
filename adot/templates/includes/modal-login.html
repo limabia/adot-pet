@@ -1,0 +1,35 @@
+{% load crispy_forms_tags %}
+<div class="modal fade" id="modal-login" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+     aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Acessar minha conta</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+
+            <form name="login" method="post" action="#login">
+                <div class="modal-body">
+                    {{ request.login_form|as_crispy_errors }}
+
+                    {% csrf_token %}
+                    <div class="form-group">
+                        {{ request.login_form.username | as_crispy_field }}
+                    </div>
+                    <div class="form-group">
+                        {{ request.login_form.password | as_crispy_field }}
+                    </div>
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-outline-secondary" data-dismiss="modal">Fechar</button>
+                    <button type="submit" class="btn btn-primary">Entrar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+

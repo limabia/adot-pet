@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'crispy_forms',
 ]
 
 MIDDLEWARE = [
@@ -49,6 +50,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'adot.middlewares.LoginMiddleware',
 ]
 
 ROOT_URLCONF = 'adot.urls'
@@ -125,5 +127,6 @@ STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 
-LOGIN_URL = '/login/'
+LOGIN_URL = '/#login'
 
+CRISPY_TEMPLATE_PACK = 'bootstrap4'

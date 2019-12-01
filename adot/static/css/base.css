@@ -1,5 +1,20 @@
 .bannerIndex{
     background-image: linear-gradient(rgb(183,194,55,0.35),rgb(183,194,55,0.35)), url("../img/dog1.png");
-    height: 100vh;
-    filter
+    height: 640px;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
+
+#nav-container {
+    display: flex;
+    height: 98px;
+    align-items: center;
+    flex-direction: row;
+}
+
+#nav-logo {
+    position: absolute;
+    width: 130px;
+    height: 130px;
+}
+

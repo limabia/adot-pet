@@ -1,5 +1,27 @@
 {% extends 'base.html' %}
 
 {% block conteudo %}
+    <section class="jumbotron bannerIndex">
+        <div class="container">
+            <h2>Precisando de ajuda para</h2>
+            <h1>Doar e Adotar?</h1>
+            <h2>Nós te ajudamos</h2>
+            <p>
+                <a href="#" class="btn btn-primary my-2">Cadastrar</a>
+            </p>
+        </div>
+    </section>
+{% endblock %}
 
+
+{% block extra_scripts %}
+    <script>
+      $(document).ready(function () {
+
+        if (window.location.href.indexOf('#login') != -1) {
+          $('#modal-login').modal('show');
+        }
+
+      });
+    </script>
 {% endblock %}
