@@ -3,9 +3,11 @@ from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth.forms import UserCreationForm
 from phonenumber_field.formfields import PhoneNumberField
 
+
 class LoginForm(AuthenticationForm):
     username = forms.EmailField(label="Email")
     password = forms.CharField(label="Senha", widget=forms.PasswordInput)
+
 
 class SignUpForm(UserCreationForm):
     username = forms.EmailField(label="Email:", help_text='Informe um endereço de e-mail válido.')

@@ -15,5 +15,6 @@ def logout(request):
     auth.logout(request)
     return redirect('index')
 
+
 def signup(request):
     return render(request, 'signup.html')

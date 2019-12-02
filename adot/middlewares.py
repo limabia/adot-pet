@@ -27,6 +27,7 @@ class LoginMiddleware:
 
         return response
 
+
 class SignupMiddleware:
     def __init__(self, get_response):
         self.get_response = get_response
@@ -35,7 +36,7 @@ class SignupMiddleware:
     def __call__(self, request):
         # before each request
         if request.method == 'POST':
-            signup_form = SignUpForm(request=request, data=request.POST, initial={})
+            signup_form = SignUpForm(data=request.POST, initial={})
             if signup_form.is_valid():
                 user = signup_form.get_user()
                 login(request, user)
