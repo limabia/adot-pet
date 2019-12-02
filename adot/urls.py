@@ -11,7 +11,7 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     # index
     path('', views.index, name="index"),
-    path('cadastro', views.index, name="cadastro"),
+    path('cadastro', views.signup, name="cadastro"),
     path('logout', views.logout, name="logout"),
     path('platform', include('plataform.urls', namespace='platform')),
 ]

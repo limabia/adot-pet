@@ -51,6 +51,7 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'adot.middlewares.LoginMiddleware',
+    'adot.middlewares.SignupMiddleware'
 ]
 
 ROOT_URLCONF = 'adot.urls'
