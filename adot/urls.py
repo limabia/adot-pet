@@ -12,6 +12,7 @@ urlpatterns = [
     # index
     path('', views.index, name="index"),
     path('cadastro', views.signup, name="cadastro"),
+    path('cadastro-pet', views.signup_pet, name="cadastro-pet"),
     path('logout', views.logout, name="logout"),
     path('platform', include('plataform.urls', namespace='platform')),
 ]

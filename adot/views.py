@@ -18,3 +18,6 @@ def logout(request):
 
 def signup(request):
     return render(request, 'signup.html')
+
+def signup_pet(request):
+    return render(request, 'signup_pet.html')
