@@ -21,3 +21,6 @@ def signup(request):
 
 def signup_pet(request):
     return render(request, 'signup_pet.html')
+
+def pets(request):
+    return render(request, 'pets.html')
