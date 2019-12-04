@@ -1,23 +1,35 @@
 {% extends 'base.html' %}
 
 {% block conteudo %}
-    <section class="jumbotron">
+    <section class="jumbotron register">
         <div class="container">
-            <div class="row" style="font-size:80%;">
+            <div class="row" style="">
                 <div class="col-md-3">
                 </div>
-                <div class="col-md-6">
+                <div class="col-md-6 formulario p-4">
                     {% load crispy_forms_tags %}
 
                     <h7 class="font-weight-bold font-sm" id="exampleModalLabel" style="color:#773295;">Cadastre-se gratuitamente e comece a aproveitar as vantagens da nossa plataforma!</h7>
                     <style>
                         .form-group input, .form-group select{
-                            font-size: 0.9em;
+                            font-size: 1em;
                         }
                         .form-group select{
                             border: rgb(206, 212, 218);
                             border-radius: .25rem;
                             padding: .375rem .75rem;
+                        }
+                        .btn-reg{
+                            width:80%;
+                            background-color:#814DA2;
+                            border-color: #814DA2;
+                            border-width: 0.2em;
+                            font-weight: 600;
+                        }
+                        .btn-reg:hover{
+                            background-color:whitesmoke;
+                            border-color: #814DA2;
+                            color: #814DA2;
                         }
                     </style>
 
@@ -50,7 +62,7 @@
                             <div class="form-group">
                                 {{ request.signup_form.terms_agree | as_crispy_field }}
                             </div>
-                            <button type="submit" class="btn btn-primary" style="width:80%">Cadastrar</button>
+                            <button type="submit" class="btn btn-primary p-2 btn-reg">Cadastrar</button>
                             <br />
                             <br />
                             <span class="help-block text-sm">* Campos obrigatórios</span>

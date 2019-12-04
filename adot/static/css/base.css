@@ -1,8 +1,48 @@
+.jumbotron{
+    margin-bottom: 0rem;
+}
+
+footer{
+    background-color: rgb(182, 193, 94);
+}
+
+footer p{
+    color: whitesmoke; /* rgb(182, 193, 94); */
+    text-shadow: 1px 1px 3px #000, -1px -1px 3px #000;
+    text-align: center;
+    font-size: 1.5em;
+    font-weight: 600;
+}
+
 .bannerIndex{
     background-image: linear-gradient(rgb(183,194,55,0.35),rgb(183,194,55,0.35)), url("../img/dog1.png");
+    background-size: cover;
+    background-position: right;
     height: 640px;
     background-repeat: no-repeat;
-    background-size: cover;
+}
+
+.bannerIndex h1, .bannerIndex h2{
+    color: whitesmoke; /* rgb(182, 193, 94); */
+    text-shadow: 2px 2px 4px #2f2f2f, -2px -2px 4px #2f2f2f;
+    font-weight: 600;
+
+}
+
+.bannerIndex .btn{
+    background-color: #814DA2;
+    width: 10em;
+    font-size: 2em;
+    padding: 0.3em;
+    border-color: #814DA2;
+    border-width: 0.1em;
+}
+
+.bannerIndex .btn:hover{
+    background-color: whitesmoke;
+    width: 10em;
+    border-color: #814DA2;
+    color: #814DA2;
 }
 
 #nav-container {
@@ -12,9 +52,52 @@
     flex-direction: row;
 }
 
+#nav-container .btn{
+    border-color: #814DA2;
+    color: #814DA2;
+    border-width: 0.15em;
+    font-size: 1.3em;
+}
+
+#nav-container .btn:hover{
+    border-color: whitesmoke;
+    background-color: #814DA2;
+    color: whitesmoke;
+}
+
+
+
 #nav-logo {
     position: absolute;
     width: 130px;
     height: 130px;
 }
 
+
+.bannerText{
+    background-color: rgb(182, 193, 94);
+}
+
+.bannerText .container{
+    color: whitesmoke; /* rgb(182, 193, 94); */
+    text-shadow: 1px 1px 3px #000, -1px -1px 3px #000;
+    text-align: center;
+}
+
+.bannerText .container h2{
+    font-size: 3em;
+    font-weight: 600;
+}
+
+.register{
+    background-image: linear-gradient(rgba(30, 187, 158, 0.3),rgba(30, 187, 158, 0.3)), url("../img/back-register.png");
+    background-size: cover;
+    background-position: top left left;
+    background-repeat: no-repeat;
+    min-height: 82vh;
+}
+
+.formulario{
+    background-color: whitesmoke;
+    border-radius: 8px;
+}
