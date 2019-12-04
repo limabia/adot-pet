@@ -1,0 +1,85 @@
+.register_pet .form-group input, .form-group select{
+    font-size: 1em;
+}
+.register_pet .form-group select{
+    border: rgb(206, 212, 218);
+    border-radius: .25rem;
+    padding: .375rem .75rem;
+}
+.register_pet .btn-reg{
+    width:100%;
+    background-color:#814DA2;
+    border-color: #814DA2;
+    border-width: 0.2em;
+    font-weight: 600;
+    color: whitesmoke;
+}
+.register_pet .btn-reg:hover{
+    background-color:whitesmoke;
+    border-color: #814DA2;
+    color: #814DA2;
+}
+.register_pet{
+    background-image: linear-gradient(rgba(211, 88, 127, 0.3),rgba(211, 88, 127, 0.3)), url("../img/back-pet-reg.png");
+    background-size: cover;
+    background-position: bottom left;
+    background-repeat: no-repeat;
+    min-height: 82vh;
+}
+
+ /* Style the form */
+ * {
+    box-sizing: border-box;
+  }
+    
+ #regForm {
+  margin: 100px auto;
+}
+
+#regForm h5 {
+  text-align: center;
+  margin-bottom: 2em;  
+}
+
+#regForm p label{
+    margin-top:0.8em;
+}
+
+input {
+  padding: 10px;
+  width: 100%;
+  font-size: 17px;
+  border: 1px solid #aaaaaa;
+}
+
+/* Mark input boxes that gets an error on validation: */
+input.invalid {
+  background-color: #ffdddd;
+}
+
+/* Hide all steps by default: */
+.tab {
+  display: none;
+}
+
+
+/* Make circles that indicate the steps of the form: */
+.step {
+  height: 20px;
+  width: 20px;
+  margin: 0 2px;
+  background-color: #bbbbbb;
+  border: none;  
+  border-radius: 50%;
+  display: inline-block;
+  opacity: 0.5;
+}
+
+.step.active {
+  opacity: 1;
+}
+
+/* Mark the steps that are finished and valid: */
+.step.finish {
+  background-color: #4CAF50;
+}

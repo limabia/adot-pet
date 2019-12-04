@@ -1,73 +1,185 @@
 {% extends 'base.html' %}
 
 {% block conteudo %}
-    <section class="jumbotron register">
+    <section class="jumbotron register_pet">
         <div class="container">
             <div class="row" style="">
                 <div class="col-md-3">
                 </div>
                 <div class="col-md-6 formulario p-4">
                     {% load crispy_forms_tags %}
+                    <center>
+                        <br />
+                        <span class="help-block text-sm">* Campos obrigatórios</span>
+                    </center>
 
-                    <h7 class="font-weight-bold font-sm" id="exampleModalLabel" style="color:#773295;">Cadastre-se gratuitamente e comece a aproveitar as vantagens da nossa plataforma!</h7>
-                    <style>
-                        .form-group input, .form-group select{
-                            font-size: 1em;
-                        }
-                        .form-group select{
-                            border: rgb(206, 212, 218);
-                            border-radius: .25rem;
-                            padding: .375rem .75rem;
-                        }
-                        .btn-reg{
-                            width:80%;
-                            background-color:#814DA2;
-                            border-color: #814DA2;
-                            border-width: 0.2em;
-                            font-weight: 600;
-                        }
-                        .btn-reg:hover{
-                            background-color:whitesmoke;
-                            border-color: #814DA2;
-                            color: #814DA2;
-                        }
-                    </style>
+                     <form id="regForm" name="signup" method="post" action="#signup" style="margin-top: 1em;">
 
-                    <form name="signup" method="post" action="#signup" style="margin-top: 1em;">
-                        {{ request.signup_form|as_crispy_errors }}
+                        <h5 class="font-weight-bold font-sm" id="cadastroTitulo" style="color:#773295;">Cadastro de animalzinho</h5>
+                        
+                        <!-- One "tab" for each step in the form: -->
+                        <div class="tab">
+                            <p>
+                                <label>Nome do bichinho:</label>
+                                <input name="nome" placeholder="" oninput="this.className = ''">
+                            </p>
+                            <p>
+                                <label>Sexo:</label>
+                                <input name="sexo" placeholder="" oninput="this.className = ''">
+                            </p>
+                            <p>
+                                <label>Data de Nascimento:</label>
+                                <input name="nascimento" placeholder="" oninput="this.className = ''">
+                            </p>
+                            <p>
+                                <label>Seu animalzinho é castrado?</label>
+                                <div class="row">
+                                    <div class="col-md-2">
+                                        <input type="radio" value="s" name="castrado" oninput="this.className = ''">
+                                    </div>
+                                    <div class="col-md-4">
+                                        <label>Sim</label>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <input type="radio" value="n" name="castrado" oninput="this.className = ''">
+                                    </div>
+                                    <div class="col-md-4">
+                                        <label>Não</label>
+                                    </div>
+                                </div>
+                            </p>
+                            <p>
+                                <label>As vacinas estão em dia?</label>
+                                <div class="row">
+                                    <div class="col-md-2">
+                                        <input type="radio" value="s" name="vacinas" oninput="this.className = ''">
+                                    </div>
+                                    <div class="col-md-4">
+                                        <label>Sim</label>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <input type="radio" value="n" name="vacinas" oninput="this.className = ''">
+                                    </div>
+                                    <div class="col-md-4">
+                                        <label>Não</label>
+                                    </div>
+                                </div>
+                            </p>
+                            <p>
+                                <label>O animalzinho tem necessidades especiais?</label>
+                                <div class="row">
+                                    <div class="col-md-2">
+                                        <input type="radio" value="s" name="necessidades" oninput="this.className = ''">
+                                    </div>
+                                    <div class="col-md-4">
+                                        <label>Sim</label>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <input type="radio" value="n" name="necessidades" oninput="this.className = ''">
+                                    </div>
+                                    <div class="col-md-4">
+                                        <label>Não</label>
+                                    </div>
+                                </div>
+                            </p>
+                        </div>
 
-                        {% csrf_token %}
-                        <div class="form-group">
-                            {{ request.signup_form.username | as_crispy_field }}
+                        <div class="tab">
+                            <p>
+                                <label>Faça uma breve descrição do bixinho, personalidade, hábitos, aparência... :</label>
+                                <textarea name="descricao" placeholder="" style="width:100%" oninput="this.className = ''">
+                                </textarea>
+                            </p>
+                            <p>
+                                <label>Espécie:</label>
+                                <select name="especie" style="width:100%">
+                                    <option value="gato">Gato</option>
+                                    <option value="cachorro">Cachorro</option>
+                                    <option value="hamster">Hamster</option>
+                                    <option value="cobra">Cobra</option>
+                                </select>
+                            </p>
+                            <p>
+                                <label>Raça:</label>
+                                <select name="raca" style="width:100%">
+                                    <option value="viralata">Vira-lata</option>
+                                    <option value="naosei">Não sei</option>
+                                </select>
+                            </p>
+                            <p>
+                                <label>Tamanho:</label>
+                                <div class="row">
+                                    <div class="col-md-2">
+                                        <input type="radio" value="p" name="tamanho" oninput="this.className = ''">
+                                    </div>
+                                    <div class="col-md-2">
+                                        <label>Pequeno</label>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <input type="radio" value="m" name="tamanho" oninput="this.className = ''">
+                                    </div>
+                                    <div class="col-md-2">
+                                        <label>Médio</label>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <input type="radio" value="g" name="tamanho" oninput="this.className = ''">
+                                    </div>
+                                    <div class="col-md-2">
+                                        <label>Grande</label>
+                                    </div>
+                                </div>
+                            </p>
                         </div>
-                        <div class="form-group">
-                            {{ request.signup_form.password | as_crispy_field }}
+                        <div class="tab">
+                            <p>
+                                <label>Coloque as melhores fotos que você tiver do animalzinho:</label>
+                                <input type="file" name="fotos">
+                            </p>
+                            <p>
+                                <label>O animal está morando no seu endereço?</label>
+                                <div class="row">
+                                    <div class="col-md-2">
+                                        <input type="radio" value="s" name="moraendereco" oninput="this.className = ''">
+                                    </div>
+                                    <div class="col-md-4">
+                                        <label>Sim</label>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <input type="radio" value="n" name="moraendereco" oninput="this.className = ''">
+                                    </div>
+                                    <div class="col-md-4">
+                                        <label>Não</label>
+                                    </div>
+                                </div>
+                            </p>
                         </div>
-                        <div class="form-group">
-                            {{ request.signup_form.confirm_password | as_crispy_field }}
+
+                        <div class="tab">
+                            <h5 class="font-weight-bold font-sm" id="exampleModalLabel" style="color:#773295;">O cadastro do animalzinho foi realizado com sucesso!</h5>
+                            <h5 class="font-weight-bold font-sm" id="exampleModalLabel" style="color:#773295;">Agora ele está aparecendo na tela de divulgação.</h5>
+                            <h5 class="font-weight-bold font-sm" id="exampleModalLabel" style="color:#773295;">Em breve seu bixinho terá um novo lar!</h5>
                         </div>
-                        <div class="form-group">
-                            {{ request.signup_form.birthdate.label_tag }}
-                            <span class="asteriskField">*</span>
-                            <div style='width:100%'>
-                                <center>
-                                    {{ request.signup_form.birthdate }}
-                                </center>
+
+                        <div style="margin-bottom: 2em;">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <button type="button" class="btn p-2 btn-reg" id="prevBtn" onclick="nextPrev(-1)">Anterior</button>                                    
+                                </div>
+                                <div class="col-md-6">
+                                    <button type="button" class="btn p-2 btn-reg" id="nextBtn" onclick="nextPrev(1)">Próximo</button>
+                                </div>
                             </div>
                         </div>
-                        <div class="form-group">
-                            {{ request.signup_form.telephone | as_crispy_field }}
+
+                        <!-- Circles which indicates the steps of the form: -->
+                        <div style="text-align:center; font-size: 2em;">
+                            <span class="step"></span>
+                            <span class="step"></span>
+                            <span class="step"></span>
+                            <span class="step"></span>
                         </div>
-                        <center>
-                            <div class="form-group">
-                                {{ request.signup_form.terms_agree | as_crispy_field }}
-                            </div>
-                            <button type="submit" class="btn btn-primary p-2 btn-reg">Cadastrar</button>
-                            <br />
-                            <br />
-                            <span class="help-block text-sm">* Campos obrigatórios</span>
-                        </center>
-                    </form>
+
+                    </form> 
                 </div>
             </div>
         </div>
