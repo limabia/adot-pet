@@ -25,15 +25,18 @@ def signup(request):
         if signup_form.is_valid():
             user = signup_form.save()
             login(request, user)
-            return redirect('platform:home')
+            return redirect('pets')
     else:
         signup_form = SignUpForm()
 
     return render(request, 'signup.html', {'signup_form': signup_form})
 
 
+@login_required
 def signup_pet(request):
     return render(request, 'signup_pet.html')
 
+
+@login_required
 def pets(request):
     return render(request, 'pets.html')

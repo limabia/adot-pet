@@ -1,3 +1,20 @@
+
+.jumbotron.jumbotron-fluid.search{
+    background-image: url("../img/banner-dog.png");
+    background-color: whitesmoke;
+    background-position: top center;
+    background-repeat: no-repeat;
+    min-height: 50vh;
+}
+
+.jumbotron.jumbotron-fluid.search .form{
+    background-color: rgb(182, 193, 94);
+    border-radius: 20px;
+    padding: 2em;
+    color: white;
+    font-weight: 600;
+}
+
 .card img{
     height:250px;
 }

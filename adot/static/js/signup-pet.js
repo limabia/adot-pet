@@ -33,7 +33,7 @@ function nextPrev(n) {
   
   // Otherwise, display the correct tab:
   showTab(currentTab);
-  
+
   if (currentTab >= x.length - 1) {
     // ... the form gets submitted:
     document.getElementById("cadastroTitulo").style.display = "none";
