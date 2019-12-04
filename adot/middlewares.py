@@ -26,26 +26,3 @@ class LoginMiddleware:
         response = self.get_response(request)
 
         return response
-
-
-class SignupMiddleware:
-    def __init__(self, get_response):
-        self.get_response = get_response
-        # One-time configuration and initialization.
-
-    def __call__(self, request):
-        # before each request
-        if request.method == 'POST':
-            signup_form = SignUpForm(data=request.POST, initial={})
-            if signup_form.is_valid():
-                user = signup_form.get_user()
-                login(request, user)
-                return redirect('platform:home')
-        else:
-            signup_form = SignUpForm()
-        request.signup_form = signup_form
-
-        # process request
-        response = self.get_response(request)
-
-        return response
