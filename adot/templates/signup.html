@@ -33,34 +33,31 @@
                         }
                     </style>
 
-                    <form name="signup" method="post" action="#signup" style="margin-top: 1em;">
-                        {{ request.signup_form|as_crispy_errors }}
+                    <form name="signup" method="post" style="margin-top: 1em;">
+                        {{ signup_form|as_crispy_errors }}
 
                         {% csrf_token %}
-                        <div class="form-group">
-                            {{ request.signup_form.username | as_crispy_field }}
-                        </div>
-                        <div class="form-group">
-                            {{ request.signup_form.password | as_crispy_field }}
-                        </div>
-                        <div class="form-group">
-                            {{ request.signup_form.confirm_password | as_crispy_field }}
-                        </div>
-                        <div class="form-group">
-                            {{ request.signup_form.birthdate.label_tag }}
+
+                        {{ signup_form.username | as_crispy_field }}
+
+                        {{ signup_form.password1 | as_crispy_field }}
+
+                        {{ signup_form.password2 | as_crispy_field }}
+
+                        <div class="form-group text-center">
+                            {{ signup_form.birthdate.label_tag }}
                             <span class="asteriskField">*</span>
-                            <div style='width:100%'>
-                                <center>
-                                    {{ request.signup_form.birthdate }}
-                                </center>
+                            <div class="center" style='width:100%'>
+                                {{ signup_form.birthdate }}
                             </div>
                         </div>
-                        <div class="form-group">
-                            {{ request.signup_form.telephone | as_crispy_field }}
-                        </div>
+
+                        {{ signup_form.telephone | as_crispy_field }}
+
+
                         <center>
                             <div class="form-group">
-                                {{ request.signup_form.terms_agree | as_crispy_field }}
+                                {{ signup_form.terms_agree | as_crispy_field }}
                             </div>
                             <button type="submit" class="btn btn-primary p-2 btn-reg">Cadastrar</button>
                             <br />

@@ -51,7 +51,6 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'adot.middlewares.LoginMiddleware',
-    'adot.middlewares.SignupMiddleware'
 ]
 
 ROOT_URLCONF = 'adot.urls'
@@ -85,8 +84,6 @@ DATABASES = {
     }
 }
 
-LOGIN_URL = '/login'
-LOGIN_REDIRECT_URL = '/home'
 
 # Password validation
 # https://docs.djangoproject.com/en/1.11/ref/settings/#auth-password-validators
@@ -129,5 +126,6 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 
 LOGIN_URL = '/#login'
+LOGIN_REDIRECT_URL = '/home'
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
